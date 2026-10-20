@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 17:04:20 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/20 18:07:56 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/20 18:24:09 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,4 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	str[k] = '\0';
 	return(str);
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-  char myStr[] = "Hello World";
-  char *myPtr = ft_strrchr(myStr, 'o');
-  if (myPtr != NULL) {
-    printf("%s\n", myPtr);
-  }
-  return 0;
 }
