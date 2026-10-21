@@ -6,13 +6,13 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 18:03:39 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/20 10:55:06 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/21 17:36:03 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	len;
 

@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 10:44:38 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/21 11:51:33 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/21 23:10:49 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,14 @@
 
 void *ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	size_t	k;
-	char		*str;
+	size_t			i;
+	unsigned char	*occ;
 
+	occ = (unsigned char *)s;
 	i = 0;
-	k = 0;
-	str = (char *)s;
-	while (str[i] != c && i <= n)
+	while ((i < n) && (occ[i] != (unsigned char) c))
 		i++;
-	if (str[i] == c)
-	{
-		while (str[i] != '\0')
-		{
-			str[k] = str[i];
-			k++;
-			i++;
-		}
-		str[k] = '\0';
-		return(str);
-	}
-	else
-		return (NULL);
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-  char myStr[] = "Hello World!";
-  char *myPtr = (char*)ft_memchr(myStr, 'o', 4);
-  if (myPtr != NULL) {
-    printf("%s", myPtr);
-  }
-  return 0;
+	if (i < n)
+		return (&occ[i]);
+	return (NULL);
 }

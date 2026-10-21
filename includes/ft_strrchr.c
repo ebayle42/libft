@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 17:04:20 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/21 09:35:35 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/21 22:20:36 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*str;
 	int		i;
-	int		k;
+	char	*occ;
 
-	str = (char *)s;
+	occ = (char *)s;
 	i = 0;
-	k = 0;
-	while (s[i] != '\0')
+	while (occ[i] != '\0')
 		i++;
-	while (s[i] != c)
+	while (occ[i] != (char) c && i > 0)
 		i--;
-	while (s[i] != '\0')
-	{
-		str[k] = s[i];
-		i++;
-		k++;
-	}
-	str[k] = '\0';
-	return (str);
+	if (occ[i] == (char)c)
+		return (&occ[i]);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 15:09:19 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/21 09:36:37 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/21 18:06:05 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,25 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	size_t				i;
 	unsigned char		*d;
 	unsigned char		*s;
-	unsigned char		*tmp;
 
 	s = (unsigned char *)src;
 	d = (unsigned char *)dest;
-	tmp = (unsigned char *)dest;
 	i = 0;
-	while (n > i)
+	if (d < s)
 	{
-		tmp[i] = s[i];
-		d[i] = tmp[i];
-		i++;
+		while (n > i)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	else if (s < d)
+	{
+		while (n > 0)
+		{
+			n--;
+			d[n] = s[n];
+		}
 	}
 	return (dest);
 }

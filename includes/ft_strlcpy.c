@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 09:37:36 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/21 14:30:47 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/21 18:34:51 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	i = 0;
 	j = 0;
 	len = ft_strlen(s);
-	if (s[i] == '\0')
-		return (i);
-	while (s[i] != '\0' || size <= i)
+	if (size == 0)
+		return (len);
+	while (s[i] != '\0' && size - 1 > i)
 	{
 		dst[j] = src[i];
 		j++;
