@@ -6,11 +6,12 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 10:13:06 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/21 10:21:32 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/21 16:49:15 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 
 int	ft_strncmp(const char *s1,const char *s2, size_t n)
 {

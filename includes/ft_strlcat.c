@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 09:47:07 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/21 10:11:48 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/21 14:35:31 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,34 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	if (ft_strlen(dst) > ft_strlen(src))
+	size_t	o;
+	size_t	len_src;
+	size_t	len_dest;
+
+	i = 0;
+	o = 0;
+	while (i < size && dst[i] != '\0')
+		i++;
+	len_dest = i;
+	while (src[o] != '\0')
+		o++;
+	len_src = o;
+	if (size <= len_dest)
+		return (size + len_src);
+	while (src[o] != '\0' && i < size - 1)
 	{
-		
+		dst[i] = src[o];
+		i++;
+		o++;
 	}
-	return(ft_strlen(dst) + ft_strlen(src));
+	dst[i] = '\0';
+	return (len_dest + len_src);
 }
 
 #include <stdio.h>
+#include <string.h>
 
-int main() 
-{
+int main() {
 
     char buffer[10] = "KooR";
     size_t needed = ft_strlcat( buffer, ".fr-demo", sizeof buffer );

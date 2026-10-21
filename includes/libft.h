@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 11:01:30 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/21 10:46:44 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/21 16:28:28 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1,const char *s2, size_t n);
 void	*memchr(const void *s, int c, size_t n);
+int		memcmp(const void *s1, const void *s2, size_t n);
+char *	strnstr(const char *big, const char *little, size_t len);
+int		ft_atoi(char *str);
 #endif

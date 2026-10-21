@@ -6,23 +6,31 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 09:37:36 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/21 10:41:03 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/21 14:30:47 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
+	char *s;
+	size_t	i;
+	size_t	j;
+	size_t	len;
 	
-}
-#include <stdio.h>
-
-int main(void)
-{
-	char source[] = "Hello";
-	char dest[] = "ooo";
-	strlcpy(dest, source, 4);
-	printf("%s\n", dest);
-	return 0;
+	s = (char *)src;
+	i = 0;
+	j = 0;
+	len = ft_strlen(s);
+	if (s[i] == '\0')
+		return (i);
+	while (s[i] != '\0' || size <= i)
+	{
+		dst[j] = src[i];
+		j++;
+		i++;
+	}
+	dst[j] = '\0';
+	return (len);
 }
