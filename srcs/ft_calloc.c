@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 11:10:40 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/22 15:16:10 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/22 17:16:17 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ptr = malloc((size) * nmemb);
 	if (!ptr)
 		return (NULL);
+	ptr = ft_memset((unsigned char *)ptr, 0, size * nmemb);
 	return (ptr);
 }

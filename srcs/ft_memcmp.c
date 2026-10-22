@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 14:39:44 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/22 15:04:24 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/22 17:04:01 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	str = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
-	while ((i < n) && (str[i] != '\0' || str2[i] != '\0'))
+	while (i < n)
 	{
-		if (str[i] > str2[i] || str[i] < str2[i])
+		if (str[i] != str2[i])
 			return (str[i] - str2[i]);
 		i++;
 	}

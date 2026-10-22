@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 16:28:00 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/22 15:52:03 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/22 18:39:33 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,25 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	size_t	lent;
+	size_t	o;
+	char *str;
+	char *to_find;
 
-	lent = ft_strlen(little);
-	if (lent > len)
+	str = (char *) big;
+	to_find = (char *) little;
+	i = 0;
+	if (ft_strlen(little) > len)
 		return (NULL);
-}
-
-#include <stdio.h>
-
-int main (void)
-{
-	char str[] = "Hello, world";
-	char search[] = "Hell";
-	ft_strnstr(str, search, 5);
-	return (0);
+	if (to_find[i] == '\0')
+		return(&str[i]);
+	while (str[i] && i < len)
+	{
+		o = 0;
+		while (str[i + o] != '\0' && str[i + o] == to_find[o] && (i + o) < len)
+			o++;
+		if (to_find[o] == '\0')
+			return (&str[i]);
+		i++;
+	}
+	return (NULL);
 }
