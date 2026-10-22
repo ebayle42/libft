@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/20 15:57:38 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/21 21:42:52 by ebayle           ###   ########.fr       */
+/*   Created: 2026/10/22 14:40:08 by ebayle            #+#    #+#             */
+/*   Updated: 2026/10/22 14:40:11 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void *ft_memchr(const void *s, int c, size_t n)
 {
-	int		i;
-	char	*occ;
+	size_t			i;
+	unsigned char	*occ;
 
-	occ = (char *)s;
+	occ = (unsigned char *)s;
 	i = 0;
-	while (occ[i] != '\0' && occ[i] != (char) c)
+	while ((i < n) && (occ[i] != (unsigned char) c))
 		i++;
-	if (occ[i] == (char)c)
+	if (i < n)
 		return (&occ[i]);
 	return (NULL);
 }

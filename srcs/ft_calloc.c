@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/21 09:47:07 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/21 18:39:17 by ebayle           ###   ########.fr       */
+/*   Created: 2026/10/22 11:10:40 by ebayle            #+#    #+#             */
+/*   Updated: 2026/10/22 15:16:10 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
-	size_t	o;
-	size_t	len_src;
-	size_t	len_dest;
-
-	i = 0;
-	o = 0;
-	while (i < size && dst[i] != '\0')
-		i++;
-	len_dest = i;
-	while (src[o] != '\0')
-		o++;
-	len_src = o;
-	if (size <= len_dest)
-		return (size + len_src);
-	o = 0;
-	while (src[o] != '\0' && i < size - 1)
-	{
-		dst[i] = src[o];
-		i++;
-		o++;
-	}
-	dst[i] = '\0';
-	return (len_dest + len_src);
+	void	*ptr;
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+	if ((nmemb * size) > 2147483647)
+		return (NULL);
+	if (nmemb >= 2147483647 || size >= 2147483647)
+		return (NULL);
+	ptr = malloc((size) * nmemb);
+	if (!ptr)
+		return (NULL);
+	return (ptr);
 }

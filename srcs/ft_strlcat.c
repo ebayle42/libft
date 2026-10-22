@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/21 16:28:00 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/21 16:51:21 by ebayle           ###   ########.fr       */
+/*   Created: 2026/10/21 09:47:07 by ebayle            #+#    #+#             */
+/*   Updated: 2026/10/22 10:54:56 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *	ft_strnstr(const char *big, const char *little, size_t len)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	o;
-	char	*bigger;
-	char	*smaller;
-
-	bigger = (char *)big;
-	smaller = (char *)little;
+	size_t	len_src;
+	size_t	len_dest;
 
 	i = 0;
 	o = 0;
-
-	return (0);
-}
-
-#include <stdio.h>
-
-int main (void)
-{
-	char str[] = "Hello, world";
-	char search[] = "Hell";
-	ft_strnstr(str, search, 5);
-	return (0);
+	while (i < size && dst[i] != '\0')
+		i++;
+	len_dest = i;
+	while (src[o] != '\0')
+		o++;
+	len_src = o;
+	if (size <= len_dest)
+		return (size + len_src);
+	o = 0;
+	while (src[o] != '\0' && i < size - 1)
+	{
+		dst[i] = src[o];
+		i++;
+		o++;
+	}
+	dst[i] = '\0';
+	return (len_dest + len_src);
 }

@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/21 09:37:36 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/21 18:34:51 by ebayle           ###   ########.fr       */
+/*   Created: 2026/10/21 16:28:00 by ebayle            #+#    #+#             */
+/*   Updated: 2026/10/22 15:52:03 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char *s;
 	size_t	i;
-	size_t	j;
-	size_t	len;
-	
-	s = (char *)src;
-	i = 0;
-	j = 0;
-	len = ft_strlen(s);
-	if (size == 0)
-		return (len);
-	while (s[i] != '\0' && size - 1 > i)
-	{
-		dst[j] = src[i];
-		j++;
-		i++;
-	}
-	dst[j] = '\0';
-	return (len);
+	size_t	lent;
+
+	lent = ft_strlen(little);
+	if (lent > len)
+		return (NULL);
+}
+
+#include <stdio.h>
+
+int main (void)
+{
+	char str[] = "Hello, world";
+	char search[] = "Hell";
+	ft_strnstr(str, search, 5);
+	return (0);
 }

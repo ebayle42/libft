@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/21 12:19:29 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/21 12:20:25 by ebayle           ###   ########.fr       */
+/*   Created: 2026/10/20 15:57:38 by ebayle            #+#    #+#             */
+/*   Updated: 2026/10/22 14:16:15 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-	int	o;
-	int	ans;
+	int		i;
+	char	*occ;
 
+	occ = (char *)s;
 	i = 0;
-	o = 0;
-	ans = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	while (occ[i] != '\0' && occ[i] != (char) c)
 		i++;
-	while (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			o++;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		ans = ans * 10 + (str[i] - '0');
-		i++;
-	}
-	if (o % 2 == 0)
-		return (ans);
-	return (-ans);
+	if (occ[i] == (char)c)
+		return (&occ[i]);
+	return (NULL);
 }
