@@ -6,19 +6,21 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 21:10:30 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/22 22:18:25 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/23 15:03:27 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	int		i;
 	char	c;
 
 	i = 0;
 	c = '\n';
+	if (s == 0)
+		return;
 	while (s[i] != '\0')
 	{
 		write(fd, &s[i], 1);

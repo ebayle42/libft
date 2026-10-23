@@ -7,15 +7,15 @@ Niveau 1 - Ecriture sur un fd (tester avec 1 = stdout, 2 = stderr)
 
 Niveau 2 - Pointeurs de fonction
 [x] 4.  ft_striteri     - modifie sur place, pas de malloc
-[o] 5.  ft_strmapi      - nouvelle chaine, premier malloc
+[x] 5.  ft_strmapi      - nouvelle chaine, premier malloc
 
 Niveau 3 - Nombres et allocation simple
-[ ] 6.  ft_putnbr_fd    - attention INT_MIN
-[ ] 7.  ft_strjoin      - malloc de la bonne taille + deux copies
-[ ] 8.  ft_substr       - cas limites : start > len, len trop grand
+[x] 6.  ft_putnbr_fd    - attention INT_MIN
+[o] 7.  ft_strjoin      - malloc de la bonne taille + deux copies
+[o] 8.  ft_substr       - cas limites : start > len, len trop grand
 
 Niveau 4 - Plus de logique
-[ ] 9.  ft_itoa         - compter les chiffres, signe, 0, INT_MIN
+[x] 9.  ft_itoa         - compter les chiffres, signe, 0, INT_MIN
 [ ] 10. ft_strtrim      - trouver debut/fin, puis copier
 
 Niveau 5 - Le boss
