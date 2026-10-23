@@ -11,12 +11,14 @@ Niveau 2 - Pointeurs de fonction
 
 Niveau 3 - Nombres et allocation simple
 [x] 6.  ft_putnbr_fd    - attention INT_MIN
-[o] 7.  ft_strjoin      - malloc de la bonne taille + deux copies
-[o] 8.  ft_substr       - cas limites : start > len, len trop grand
+[x] 7.  ft_strjoin      - malloc de la bonne taille + deux copies
+[x] 8.  ft_substr       - cas limites : start > len, len trop grand
 
 Niveau 4 - Plus de logique
 [x] 9.  ft_itoa         - compter les chiffres, signe, 0, INT_MIN
-[ ] 10. ft_strtrim      - trouver debut/fin, puis copier
+[o] 10. ft_strtrim      - trouver debut/fin, puis copier
+!!! LIS MOI !!!
+Lis la chaine, si le carctere n'est pas celui exclu alors sauve le, puis passe a l'autre caractere recherche puis re-sauegarde
 
 Niveau 5 - Le boss
 [ ] 11. ft_split        - compter, allouer, tout free si un malloc echoue
