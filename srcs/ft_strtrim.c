@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 23:08:16 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/23 23:29:29 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/24 18:05:38 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,16 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	//Utilise substr pour retirer ce que tu veux
-	ft_substr(s1, 0, 10);
-	return(rep);
+	size_t	i;
+	size_t	o;
+
+	if (!s1 || !set)
+		return (NULL);
+	i = 0;
+	o = ft_strlen(s1);
+	while (s1[i] && ft_strchr(set, s1[i]))
+		i++;
+	while (o > i && ft_strchr(set, s1[o - 1]))
+		o--;
+	return (ft_substr(s1, i, o - i));
 }
