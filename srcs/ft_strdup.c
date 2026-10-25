@@ -6,13 +6,13 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 14:38:10 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/22 14:59:15 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/25 16:30:12 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, char *src)
+static char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
