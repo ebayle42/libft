@@ -16,11 +16,9 @@ Niveau 3 - Nombres et allocation simple
 
 Niveau 4 - Plus de logique
 [x] 9.  ft_itoa         - compter les chiffres, signe, 0, INT_MIN
-[o] 10. ft_strtrim      - trouver debut/fin, puis copier
-!!! LIS MOI !!!
-Lis la chaine, si le carctere n'est pas celui exclu alors sauve le, puis passe a l'autre caractere recherche puis re-sauegarde
+[x] 10. ft_strtrim      - trouver debut/fin, puis copier
 
 Niveau 5 - Le boss
-[ ] 11. ft_split        - compter, allouer, tout free si un malloc echoue
+[o] 11. ft_split        - compter, allouer, tout free si un malloc echoue
 
 Rappel : avant chaque malloc, calculer sur papier le nombre d'octets (sans oublier le '\0').
