@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 10:14:14 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/23 10:18:38 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/26 16:45:03 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long int nbr;
+	long int	nbr;
 
 	nbr = n;
 	if (nbr < 0)

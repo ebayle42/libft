@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 10:19:03 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/23 19:30:23 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/26 16:47:15 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	o = 0;
-	if (s1 == 0|| s2 == 0)
+	if (s1 == 0 || s2 == 0)
 		return (NULL);
 	reponse = malloc(sizeof(char) * ((ft_strlen(s1) + ft_strlen(s2)) + 1));
 	if (!reponse)

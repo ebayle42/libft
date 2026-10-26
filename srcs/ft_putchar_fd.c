@@ -6,13 +6,13 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 21:03:25 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/22 21:07:23 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/26 16:37:48 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

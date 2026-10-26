@@ -6,12 +6,13 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 10:52:57 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/23 11:40:15 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/26 16:39:20 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_lens(long int nbr)
+
+static int	ft_lens(long int nbr)
 {
 	int	i;
 
@@ -31,10 +32,10 @@ int ft_lens(long int nbr)
 
 char	*ft_itoa(int n)
 {
-	int	i;
-	int	j;
-	long int nbr;
-	char *reponse;
+	int			i;
+	int			j;
+	long int	nbr;
+	char		*reponse;
 
 	i = ft_lens(n) - 1;
 	j = 0;
@@ -54,6 +55,6 @@ char	*ft_itoa(int n)
 		nbr /= 10;
 		i--;
 	}
-	reponse[ft_lens(n)] =  '\0';
+	reponse[ft_lens(n)] = '\0';
 	return (reponse);
 }

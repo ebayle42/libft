@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/24 19:00:32 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/25 18:24:28 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/26 16:52:02 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ static int	count_words(char const *str, char sep)
 
 static void	*ft_free(char **strs, int words)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while (i< words)
+	while (i < words)
 	{
 		free(strs[i]);
 		i++;
@@ -44,8 +44,8 @@ static void	*ft_free(char **strs, int words)
 
 static char	*fill_word(char const *str, int debut, int fin)
 {
-	char *word;
-	int i;
+	char	*word;
+	int		i;
 
 	i = 0;
 	word = malloc(sizeof(char) * (fin - debut + 1));
@@ -61,39 +61,41 @@ static char	*fill_word(char const *str, int debut, int fin)
 	return (word);
 }
 
-static void	ft_terrorism(size_t *i, int *j, int *pos_word)
+static char	**fill_split(char **tab, char const *s, char c)
 {
-	*i = 0;
-	*j = 0;
-	*pos_word = -10;
-}
-char **ft_split(char const *s, char c)
-{
-	size_t	i;
-	int		j;
-	int		pos_word;
-	char	**tab;
+	int	i;
+	int	j;
+	int	start;
 
-	ft_terrorism(&i, &j, &pos_word);
-	if (s == 0)
-		return(NULL);
-	tab = malloc(sizeof(char *) * (count_words(s, c) + 1));
-	if (!tab)
-		return(NULL);
-	while (i <= ft_strlen(s))
+	i = 0;
+	j = 0;
+	while (s[i])
 	{
-		if (s[i] != c && pos_word < 0)
-			pos_word = i;
-        else if ((s[i] == c || i == ft_strlen(s)) && pos_word >= 0)
+		if (s[i] != c)
 		{
-			tab[j] = fill_word(s, pos_word, i);
+			start = i;
+			while (s[i] && s[i] != c)
+				i++;
+			tab[j] = fill_word(s, start, i);
 			if (!tab[j])
 				return (ft_free(tab, j));
-			pos_word = -1;
 			j++;
 		}
-		i++;
+		else
+			i++;
 	}
-	tab[j] = 0;
-	return(tab);
+	tab[j] = NULL;
+	return (tab);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**tab;
+
+	if (!s)
+		return (NULL);
+	tab = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!tab)
+		return (NULL);
+	return (fill_split(tab, s, c));
 }

@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 21:10:30 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/23 15:03:27 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/26 16:45:57 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putendl_fd(char *s, int fd)
 	i = 0;
 	c = '\n';
 	if (s == 0)
-		return;
+		return ;
 	while (s[i] != '\0')
 	{
 		write(fd, &s[i], 1);

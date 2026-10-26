@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 21:53:43 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/23 16:20:05 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/26 16:47:37 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	rep = malloc(sizeof(char) * ft_strlen(&s[i]) + 1);
 	if (!rep)
 		return (NULL);
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		str = s[i];
 		rep[i] = f(i, str);
@@ -33,4 +33,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	rep[i] = '\0';
 	return (rep);
 }
-	

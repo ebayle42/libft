@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 21:13:11 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/23 15:11:43 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/26 16:46:43 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 	i = 0;
 	if (f == 0 || s == 0)
-		return;
-	while(s[i] != '\0')
+		return ;
+	while (s[i] != '\0')
 	{
 		f(i, &s[i]);
 		i++;
 	}
-
 }

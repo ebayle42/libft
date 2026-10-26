@@ -6,19 +6,19 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 21:07:44 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/23 15:00:28 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/26 16:45:50 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
 	i = 0;
 	if (s == 0)
-		return;
+		return ;
 	while (s[i] != '\0')
 	{
 		write(fd, &s[i], 1);
