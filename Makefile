@@ -1,24 +1,75 @@
-NAME = libft.a
+NAME		= libft.a
 
-OBJS = srcs/ft_atoi.o srcs/ft_bzero.o srcs/ft_calloc.o srcs/ft_isalnum.o srcs/ft_isalpha.o srcs/ft_isascii.o srcs/ft_isdigit.o srcs/ft_isprint.o srcs/ft_itoa.o srcs/ft_memchr.o srcs/ft_memcmp.o srcs/ft_memcpy.o srcs/ft_memmove.o srcs/ft_memset.o srcs/ft_putchar_fd.o srcs/ft_putendl_fd.o srcs/ft_putnbr_fd.o srcs/ft_putstr_fd.o srcs/ft_strchr.o srcs/ft_strdup.o srcs/ft_striteri.o srcs/ft_strlcat.o srcs/ft_strlcpy.o srcs/ft_strlen.o srcs/ft_strncmp.o srcs/ft_strnstr.o srcs/ft_strrchr.o srcs/ft_tolower.o srcs/ft_toupper.o srcs/main.o srcs/ft_strmapi.o srcs/ft_strjoin.o srcs/ft_substr.o srcs/ft_strtrim.o srcs/ft_split.o srcs/ft_ltsnew.o srcs/ft_lstsize.o srcs/ft_ltsadd_front.o srcs/ft_lstlast.o srcs/ft_lstadd_back.o srcs/ft_lstdelone.o srcs/ft_lstclear.o
-.DEFAULT: all
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror
+INCLUDES	= -I srcs
+AR			= ar rcs
+RM			= rm -f
 
-.PHONY: all clean fclean re
+SRCS_DIR	= srcs
+HEADER		= $(SRCS_DIR)/libft.h
 
-.SUFFIXES: .c.o
+SRCS		=	ft_atoi.c \
+				ft_bzero.c \
+			  	ft_calloc.c \
+			  	ft_isalnum.c \
+				ft_isalpha.c \
+			  	ft_isascii.c \
+			  	ft_isdigit.c \
+			  	ft_isprint.c \
+			  	ft_itoa.c \
+			  	ft_memchr.c \
+			  	ft_memcmp.c \
+			  	ft_memcpy.c \
+			  	ft_memmove.c \
+			  	ft_memset.c \
+			  	ft_putchar_fd.c \
+			  	ft_putendl_fd.c \
+			  	ft_putnbr_fd.c \
+			  	ft_putstr_fd.c \
+			  	ft_split.c \
+			  	ft_strchr.c \
+			  	ft_strdup.c \
+			  	ft_striteri.c \
+			  	ft_strjoin.c \
+			  	ft_strlcat.c \
+			  	ft_strlcpy.c \
+			  	ft_strlen.c \
+			  	ft_strmapi.c \
+			  	ft_strncmp.c \
+			  	ft_strnstr.c \
+			  	ft_strrchr.c \
+			  	ft_strtrim.c \
+			  	ft_substr.c \
+			  	ft_tolower.c \
+				ft_toupper.c
 
-all: ${NAME}
+BONUS_SRCS	= ft_lstnew.c \
+			  ft_lstadd_front.c \
+			  ft_lstsize.c \
+			  ft_lstlast.c \
+			  ft_lstadd_back.c \
+
+OBJS		= $(addprefix $(SRCS_DIR)/, $(SRCS:.c=.o))
+BONUS_OBJS	= $(addprefix $(SRCS_DIR)/, $(BONUS_SRCS:.c=.o))
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
+
+bonus:
+	@$(MAKE) --no-print-directory OBJS="$(OBJS) $(BONUS_OBJS)" all
+
+%.o: %.c $(HEADER)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	rm -f ${OBJS}
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
-fclean: clean 
-	rm -f ${NAME} 
+fclean: clean
+	$(RM) $(NAME)
 
 re: fclean all
 
-${NAME}: $(OBJS)
-	ar rcs ${NAME} ${OBJS}
-
-.c.o:
-	cc -Wall -Wextra -Werror -c -o$@ $< -I includes/
+.PHONY: all bonus clean fclean re

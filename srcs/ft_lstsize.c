@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/27 01:44:32 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/27 03:48:07 by ebayle           ###   ########.fr       */
+/*   Created: 2026/10/27 21:05:26 by ebayle            #+#    #+#             */
+/*   Updated: 2026/10/27 21:08:56 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 unsigned int	ft_lstsize(t_list *lst)
 {
-	unsigned int	len;
+	unsigned int	size;
 
-	len = 0;
-	while (lst)
+	size = 0;
+	while(lst)
 	{
-		len++;
+		size++;
 		lst = lst -> next;
-	}	
-	return (len);
+	}
+	return (size);
 }

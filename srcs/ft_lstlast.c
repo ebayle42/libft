@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/27 03:21:16 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/27 03:32:07 by ebayle           ###   ########.fr       */
+/*   Created: 2026/10/27 21:09:23 by ebayle            #+#    #+#             */
+/*   Updated: 2026/10/27 21:17:00 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
-	while (lst -> next)
+	while(lst -> next)
 		lst = lst -> next;
 	return (lst);
 }
