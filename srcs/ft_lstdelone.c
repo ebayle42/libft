@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 03:57:31 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/27 04:06:27 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/27 06:28:51 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void			ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	
+	if (!lst)
+		return ;
+	del(lst -> content);
+	free(lst);
 }
