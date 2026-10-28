@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 15:26:55 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/28 19:17:39 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/28 20:17:24 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while(lst)
 	{
 		content = f(lst -> content);
-		new_obj = ft_lstnew(f(lst -> content));
+		new_obj = ft_lstnew(content);
 		if (!new_obj)
 		{
 			del(content);
