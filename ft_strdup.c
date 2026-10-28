@@ -26,13 +26,13 @@ static char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-char	*ft_strdup(const char *src)
+char	*ft_strdup(const char *s)
 {
 	char	*new;
 
-	new = malloc(sizeof(char) * (ft_strlen(src) + 1));
+	new = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (new == NULL)
 		return (0);
-	ft_strcpy(new, (char *)src);
+	ft_strcpy(new, (char *)s);
 	return (new);
 }
