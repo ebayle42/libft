@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/24 19:00:32 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/27 00:16:04 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/28 15:24:52 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,13 @@ static char	**fill_split(char **tab, char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
+	char	**result;
 
 	if (!s)
 		return (NULL);
 	tab = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!tab)
 		return (NULL);
-	return (fill_split(tab, s, c));
+	result = fill_split(tab, s, c);
+	return (result);
 }

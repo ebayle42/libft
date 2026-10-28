@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 21:09:23 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/27 21:17:00 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/28 18:04:41 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
-	while(lst -> next)
+	while (lst -> next)
 		lst = lst -> next;
 	return (lst);
 }

@@ -6,7 +6,7 @@
 /*   By: ebayle <ebayle@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 11:10:40 by ebayle            #+#    #+#             */
-/*   Updated: 2026/10/26 16:41:06 by ebayle           ###   ########.fr       */
+/*   Updated: 2026/10/28 18:04:02 by ebayle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		error = ft_calloc(1, 1);
 		return (error);
 	}
-	if ((nmemb * size) > 2147483647)
-		return (NULL);
-	if (nmemb >= 2147483647 || size >= 2147483647)
+	if (size != 0 && nmemb > (size_t)-1 / size)
 		return (NULL);
 	ptr = malloc((size) * nmemb);
 	if (!ptr)
