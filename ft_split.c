@@ -42,22 +42,26 @@ static void	*ft_free(char **strs, int words)
 	return (NULL);
 }
 
-static char	*fill_word(char const *str, int debut, int fin)
+static char	*fill_word(char const *s, int *i, char c)
 {
 	char	*word;
-	int		i;
+	int		start;
+	int		k;
 
-	i = 0;
-	word = malloc(sizeof(char) * (fin - debut + 1));
+	start = *i;
+	while (s[*i] && s[*i] != c)
+		(*i)++;
+	word = malloc(sizeof(char) * (*i - start + 1));
 	if (!word)
 		return (NULL);
-	while (debut < fin)
+	k = 0;
+	while (start < *i)
 	{
-		word[i] = str[debut];
-		i++;
-		debut++;
+		word[k] = s[start];
+		k++;
+		start++;
 	}
-	word[i] = 0;
+	word[k] = 0;
 	return (word);
 }
 
@@ -65,7 +69,6 @@ static char	**fill_split(char **tab, char const *s, char c)
 {
 	int	i;
 	int	j;
-	int	start;
 
 	i = 0;
 	j = 0;
@@ -73,12 +76,12 @@ static char	**fill_split(char **tab, char const *s, char c)
 	{
 		if (s[i] != c)
 		{
-			start = i;
-			while (s[i] && s[i] != c)
-				i++;
-			tab[j] = fill_word(s, start, i);
+			tab[j] = fill_word(s, &i, c);
 			if (!tab[j])
-				return (ft_free(tab, j));
+			{
+				ft_free(tab, j);
+				return (NULL);
+			}
 			j++;
 		}
 		else
