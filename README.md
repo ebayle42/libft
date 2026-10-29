@@ -81,6 +81,9 @@ cc -Wall -Wextra -Werror main.c -L. -lft -I. -o program
 - `man 3` pages of each libc function
 - [GNU Make manual](https://www.gnu.org/software/make/manual/make.html)
 - [libft_tester](https://github.com/nda-cunh/libft_tester)
+- [francinette](https://github.com/xicodomingues/francinette)
+- [developpez.com](https://chgi.developpez.com/liste/)
+- [StackOverflow](https://stackoverflow.com/questions)
 
 AI usage: Claude was used as a peer reviewer to point out edge cases and bugs
 through hints, and to help with the Makefile and this README. All functions
