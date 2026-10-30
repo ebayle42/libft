@@ -65,8 +65,14 @@ Compile:
 
 ```sh
 make        # builds libft.a
+```
+```sh
 make clean  # removes object files
+```
+```sh
 make fclean # removes object files and libft.a
+```
+```sh
 make re     # fclean + all
 ```
 
@@ -80,8 +86,8 @@ cc -Wall -Wextra -Werror main.c -L. -lft -I. -o program
 
 - `man 3` pages of each libc function
 - [GNU Make manual](https://www.gnu.org/software/make/manual/make.html)
-- [libft_tester](https://github.com/nda-cunh/libft_tester)
-- [francinette](https://github.com/xicodomingues/francinette)
+- [libft_tester](https://github.com/nda-cunh/libft_tester) by [nda-cunh](https://github.com/nda-cunh/) 
+- [francinette](https://github.com/xicodomingues/francinette) by [xicodomingues](https://github.com/xicodomingues)
 - [developpez.com](https://chgi.developpez.com/liste/)
 - [StackOverflow](https://stackoverflow.com/questions)
 
